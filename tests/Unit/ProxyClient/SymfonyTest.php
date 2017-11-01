@@ -75,6 +75,7 @@ class SymfonyTest extends TestCase
 
     public function testInvalidateTagsWithALotOfTags()
     {
+        /** @var HttpDispatcher|\PHPUnit_Framework_MockObject_MockObject $dispatcher */
         $dispatcher = $this->createMock(HttpDispatcher::class);
         $dispatcher
             ->expects($this->exactly(3))
@@ -109,7 +110,7 @@ class SymfonyTest extends TestCase
                 ]
             );
 
-        $symfony = new Symfony($dispatcher, ['purge_tags_header_length' => 100]);
+        $symfony = new Symfony($dispatcher, ['header_length' => 100]);
 
         $symfony->invalidateTags([
             'foobar',

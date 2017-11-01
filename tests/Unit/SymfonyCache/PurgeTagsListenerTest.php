@@ -62,7 +62,7 @@ class PurgeTagsListenerTest extends TestCase
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertSame(400, $response->getStatusCode());
-        $this->assertSame('Store must be an instance of '.Psr6StoreInterface::class.' Check your proxy configuration.', $response->getContent());
+        $this->assertSame('Store must be an instance of '.Psr6StoreInterface::class.'. Please check your proxy configuration.', $response->getContent());
     }
 
     public function testPurgeAllowed()
@@ -154,7 +154,7 @@ class PurgeTagsListenerTest extends TestCase
 
         $purgeTagsListener = new PurgeTagsListener([
             'client_matcher' => $matcher,
-            'purge_tags_method' => 'FOO',
+            'tags_method' => 'FOO',
         ]);
         $request = Request::create('http://example.com/foo', 'PURGETAGS');
         $event = new CacheEvent($kernel, $request);

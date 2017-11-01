@@ -38,8 +38,8 @@
         "symfony/http-kernel": "^2.3||^3.0",
         "phpunit/phpunit": "^5.7 || ^6.0",
         "toflar/psr6-symfony-http-cache-store": "dev-master",
-        "symfony/lock": "^3.4@dev",
-        "symfony/cache": "^3.4@dev"
+        "symfony/lock": "^3.4@beta",
+        "symfony/cache": "^3.4@beta"
     },
     "suggest": {
         "friendsofsymfony/http-cache-bundle": "For integration with the Symfony framework",
